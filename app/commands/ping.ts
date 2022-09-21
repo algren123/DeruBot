@@ -1,5 +1,5 @@
 import { Command } from 'app/command';
-import { Client, CommandInteraction, EmbedBuilder } from 'discord.js';
+import { Client, CommandInteraction } from 'discord.js';
 
 export const Ping: Command = {
   name: 'ping',
