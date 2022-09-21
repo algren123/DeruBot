@@ -57,7 +57,10 @@ export const Kick: Command = {
       console.log('I cannot send DMs to this user!');
     });
 
-    await interaction.followUp({ embeds: [embed] });
+    await interaction
+      .followUp({ embeds: [embed] })
+      .catch((err) => console.log(err));
+
     await kickedMember.kick();
   },
 };
