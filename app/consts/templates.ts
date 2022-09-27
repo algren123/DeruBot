@@ -37,12 +37,12 @@ export const getDefaultEmbed = (
     .setFields(
       {
         name: 'Team A',
-        value: teams.get('a'),
+        value: teams.get('a').join('\n'),
         inline: true,
       },
       {
         name: 'Team B',
-        value: teams.get('b'),
+        value: teams.get('b').join('\n'),
         inline: true,
       }
     );

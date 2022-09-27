@@ -3,12 +3,14 @@ import { shuffle } from '../helpers/shuffle';
 export const makeTeams = (users: string[]): Map<any, any> => {
   const players = shuffle(users);
   const teams = new Map();
+  teams.set('a', []);
+  teams.set('b', []);
 
   for (let i = 0; i < players?.length; i++) {
     if ((i + 2) % 2 === 0) {
-      teams.set('a', players?.[i]);
+      teams.get('a').push(players[i]);
     } else {
-      teams.set('b', players?.[i]);
+      teams.get('b').push(players[i]);
     }
   }
 

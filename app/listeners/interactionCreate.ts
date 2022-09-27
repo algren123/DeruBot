@@ -66,8 +66,14 @@ const handleConfirmButton = async (
   const members = interaction.channel.members;
   const teamAIds = global.currentTeams.get('a');
   const teamBIds = global.currentTeams.get('b');
-  const teamA = members.filter((member) => teamAIds.includes(member.id));
-  const teamB = members.filter((member) => teamBIds.includes(member.id));
+  const teamA = members.filter((member) =>
+    teamAIds.includes(`<@${member.id}>`)
+  );
+  const teamB = members.filter((member) =>
+    teamBIds.includes(`<@${member.id}>`)
+  );
+
+  console.log(teamA);
 
   for (const [memberId, member] of teamA) {
     member.voice.setChannel(channelA);
